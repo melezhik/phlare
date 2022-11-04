@@ -11,7 +11,7 @@ tasks:
   depends:
     -
       name: install-deps
--
+ -
   name: install-deps
   language: Bash
   default: true
@@ -23,7 +23,7 @@ tasks:
   depends:
     -
       name: install-go
--
+ -
     name: install-go
     language: Bash
     code: |
