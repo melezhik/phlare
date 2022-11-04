@@ -1,0 +1,31 @@
+tasks:
+ -
+  name: go-test
+  language: Bash
+  default: true
+  code: |
+    set -e
+    go version
+    cd source
+    make go/test
+  depends:
+    -
+      name: install-deps
+-
+  name: install-deps
+  language: Bash
+  default: true
+  code: |
+    set -e
+    go version
+    cd source
+    make check/go/mod
+  depends:
+    -
+      name: install-go
+-
+    name: install-go
+    language: Bash
+    code: |
+      sudo apk add go \
+      --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
